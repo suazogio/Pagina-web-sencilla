@@ -1,22 +1,25 @@
 /* Estilos generales */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #fafafa;
+  background: linear-gradient(135deg, #fafafa 60%, #ffe5d0 100%);
   color: #333;
 }
 
 header {
   background: #ff914d;
   color: #fff;
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 header h1 {
   margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
 }
 
 nav ul {
@@ -25,63 +28,148 @@ nav ul {
   margin: 0.5rem 0 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+nav a:hover {
+  background: #ffb07c;
 }
 
 main {
-  padding: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .image-placeholder {
   width: 100%;
-  height: 200px;
-  background: #ccc;
+  max-width: 500px;
+  height: 220px;
+  background: none;
   margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .cards {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .card {
   background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 250px;
+  padding: 1.2rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  width: 260px;
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 1.5rem;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(255,145,77,0.15);
 }
 
 .card .image-placeholder {
   width: 100%;
   height: 150px;
-  background: #ddd;
-  margin-bottom: 0.5rem;
+  background: none;
+  margin-bottom: 0.7rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+.card .image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
+.servicios {
+  margin-top: 2.5rem;
+  background: #fff7f0;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+}
+.servicios h2 {
+  margin-top: 0;
+}
 .servicios ul {
   list-style: square;
   padding-left: 1.5rem;
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
 }
 
 footer {
   background: #333;
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 1.2rem;
   margin-top: 2rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Responsividad */
+@media (max-width: 900px) {
+  .cards {
+    gap: 1rem;
+  }
+  .card {
+    width: 90vw;
+    max-width: 350px;
+  }
+  main {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 95vw;
+    max-width: 350px;
+  }
+  .image-placeholder {
+    max-width: 95vw;
+    height: 160px;
+  }
 }
